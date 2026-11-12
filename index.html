@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow – Task management for small teams</title>
+  <meta name="description" content="TaskFlow helps small teams plan, assign and finish work in one shared board.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="logo">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#0FA37F"/><path d="M7 13.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        TaskFlow
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="nav__menu">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☾</button>
+        <button class="btn btn--primary btn--sm" data-open-modal>Get Started</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1>Your team's work, finished on time.</h1>
+          <p class="lead">TaskFlow gives small teams one shared board to plan tasks, assign owners and see what is done. No training needed.</p>
+          <div class="hero__actions">
+            <button class="btn btn--primary" data-open-modal>Start free</button>
+            <a href="#contact" class="btn btn--ghost">Request a demo</a>
+          </div>
+          <p class="hero__note">Free for teams up to 5 people.</p>
+        </div>
+
+        <!-- Interactive Kanban board (drag and drop) -->
+        <div class="kanban" aria-label="Interactive task board">
+          <div class="kanban__head"><strong>Website launch</strong><span id="progress-label"></span></div>
+          <div class="board__bar"><div id="progress-fill"></div></div>
+          <div class="kanban__cols">
+            <section class="col" data-col="todo"><h4>To do <span class="count"></span></h4><ul class="col__list" data-list="todo"></ul></section>
+            <section class="col" data-col="doing"><h4>In progress <span class="count"></span></h4><ul class="col__list" data-list="doing"></ul></section>
+            <section class="col" data-col="done"><h4>Done <span class="count"></span></h4><ul class="col__list" data-list="done"></ul></section>
+          </div>
+          <form id="add-task" class="add-task" novalidate>
+            <input id="new-task" type="text" maxlength="40" placeholder="Add a task, press Enter" aria-label="New task name">
+            <button type="submit" class="btn btn--primary btn--sm">Add</button>
+          </form>
+          <p class="board__hint">Try it: drag cards between columns, or tap the arrow on a card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="TaskFlow in numbers">
+      <div class="container stats__grid">
+        <div><strong data-count="2400">0</strong><span>teams use TaskFlow</span></div>
+        <div><strong data-count="58000">0</strong><span>tasks finished every week</span></div>
+        <div><strong data-count="10">0</strong><span>minutes to set up</span></div>
+        <div><strong data-count="98" data-suffix="%">0</strong><span>would recommend us</span></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Everything a small team needs, nothing it doesn't</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M4 12v7a1 1 0 001 1h14"/></svg></div>
+            <h3>Task tracking</h3>
+            <p>Create tasks, set due dates and move them from To do to Done in one click.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 15c3 0 6 1.5 6 5"/></svg></div>
+            <h3>Team collaboration</h3>
+            <p>Assign owners, comment on tasks and keep every conversation next to the work.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+            <h3>Progress reports</h3>
+            <p>See who is working on what and which projects are behind, without asking for updates.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 00-6 6c0 5-2 6-2 6h16s-2-1-2-6a6 6 0 00-6-6zM10 19a2 2 0 004 0"/></svg></div>
+            <h3>Smart reminders</h3>
+            <p>Get a nudge before a deadline so nothing slips through.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section section--tint">
+      <div class="container">
+        <h2>Start in three steps</h2>
+        <p class="section__sub">Most teams are up and running in under ten minutes.</p>
+        <ol class="steps">
+          <li><span class="step__num">1</span><h3>Create your team</h3><p>Sign up with your email and invite teammates with a link.</p></li>
+          <li><span class="step__num">2</span><h3>Add your tasks</h3><p>List what needs doing, assign an owner and pick a due date.</p></li>
+          <li><span class="step__num">3</span><h3>Track progress</h3><p>Check the board and reports to see what is finished and what is next.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <div class="container">
+        <h2>Teams finish more with TaskFlow</h2>
+        <div class="quotes">
+          <figure class="quote"><blockquote>We dropped three spreadsheets and a chat thread. Everyone now knows what they own this week.</blockquote><figcaption><span class="avatar a1">PN</span><div><strong>Priya Nair</strong><small>Founder, Lumen Studio</small></div></figcaption></figure>
+          <figure class="quote"><blockquote>Setup took one afternoon. Our standup went from 30 minutes to 10 because the board answers most questions.</blockquote><figcaption><span class="avatar a2">DM</span><div><strong>Daniel Mathew</strong><small>Engineering lead, Brightpath</small></div></figcaption></figure>
+          <figure class="quote"><blockquote>The reports show me which projects are slipping before clients ask. That alone is worth the price.</blockquote><figcaption><span class="avatar a3">SR</span><div><strong>Sana Rao</strong><small>Operations manager, Kiteworks</small></div></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>Simple pricing</h2>
+        <p class="section__sub">Start free. Upgrade when your team grows.</p>
+        <div class="billing" role="group" aria-label="Billing period">
+          <button class="billing__btn active" data-billing="monthly" aria-pressed="true">Monthly</button>
+          <button class="billing__btn" data-billing="yearly" aria-pressed="false">Yearly <span class="save">Save 20%</span></button>
+        </div>
+        <div class="estimator">
+          <label for="team-size">How big is your team? <strong id="team-size-out">8 people</strong></label>
+          <input type="range" id="team-size" min="1" max="50" value="8">
+          <p id="estimate" aria-live="polite"></p>
+        </div>
+        <div class="plans">
+          <article class="plan" data-plan-card="Free">
+            <h3>Free</h3>
+            <p class="price">$0<span>/month</span></p>
+            <ul><li>Up to 5 people</li><li>3 active projects</li><li>Basic task board</li></ul>
+            <a href="#contact" class="btn btn--ghost" data-plan="Free">Start free</a>
+          </article>
+          <article class="plan plan--featured" data-plan-card="Pro">
+            <span class="badge">Most popular</span>
+            <h3>Pro</h3>
+            <p class="price">$<b data-monthly="9" data-yearly="7">9</b><span>/user/month</span></p>
+            <ul><li>Unlimited projects</li><li>Progress reports</li><li>Smart reminders</li><li>Priority email support</li></ul>
+            <a href="#contact" class="btn btn--primary" data-plan="Pro">Choose Pro</a>
+          </article>
+          <article class="plan" data-plan-card="Business">
+            <h3>Business</h3>
+            <p class="price">$<b data-monthly="19" data-yearly="15">19</b><span>/user/month</span></p>
+            <ul><li>Everything in Pro</li><li>Team permissions</li><li>Export data</li><li>Onboarding call</li></ul>
+            <a href="#contact" class="btn btn--ghost" data-plan="Business">Choose Business</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--tint">
+      <div class="container faq">
+        <h2>Questions teams ask us</h2>
+        <details open><summary>Do I need a credit card to start?</summary><p>No. The Free plan needs only an email address, and you can stay on it as long as you like.</p></details>
+        <details><summary>Can I invite people outside my company?</summary><p>Yes. Share a link and add clients or freelancers to a single project without giving them access to the rest.</p></details>
+        <details><summary>Can I change plans later?</summary><p>You can upgrade or downgrade at any time. Changes apply from your next billing date.</p></details>
+        <details><summary>Is my data safe?</summary><p>Your tasks are encrypted in transit and at rest, and you can export everything on the Business plan.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT / DEMO -->
+    <section id="contact" class="section section--dark">
+      <div class="container contact">
+        <div class="contact__info">
+          <h2>Request a demo</h2>
+          <p>Tell us about your team and we will show you TaskFlow in a 20-minute call.</p>
+          <ul class="contact__list">
+            <li>Email: hello@taskflow.example</li>
+            <li>Phone: +91 98765 43210</li>
+            <li>Hours: Mon–Fri, 9am–6pm IST</li>
+          </ul>
+        </div>
+
+        <form id="demo-form" class="form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name">
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <div class="field">
+            <label for="plan">Plan you are interested in</label>
+            <select id="plan" name="plan">
+              <option>Free</option><option selected>Pro</option><option>Business</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <small class="error" aria-live="polite"></small>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Request demo</button>
+          <p id="form-success" class="success" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year">2026</span> TaskFlow. Sample project for a front-end assignment.</p>
+      <nav aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a href="#home">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- SIGN-UP MODAL -->
+  <div class="modal" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+      <h2 id="modal-title">Create your free account</h2>
+      <p class="modal__sub">No credit card needed. Takes about a minute.</p>
+      <form id="signup-form" novalidate>
+        <div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" autocomplete="email"><small class="error" aria-live="polite"></small></div>
+        <div class="field"><label for="s-pass">Password</label><input id="s-pass" name="password" type="password" autocomplete="new-password"><small class="error" aria-live="polite"></small></div>
+        <button type="submit" class="btn btn--primary btn--full">Create account</button>
+        <p id="signup-success" class="success" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <button class="to-top" aria-label="Back to top" hidden>&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
