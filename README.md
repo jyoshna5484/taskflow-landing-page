@@ -26,7 +26,7 @@ Fonts: Sora and Inter (Google Fonts).
 Optional: `python -m http.server 8000` in the folder, then visit http://localhost:8000.
 
 ## Deploy
-Drag the folder onto https://app.netlify.com/drop, or enable GitHub Pages in the repository settings.
+Drag the folder onto https://papaya-genie-5e1179.netlify.app , or enable GitHub Pages in the repository settings.
 
 ## Project structure
 ```
