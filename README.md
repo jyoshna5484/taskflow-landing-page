@@ -36,4 +36,4 @@ script.js    menu, task board, plan selection, form validation
 ```
 
 ## Design notes
-(Add your 5–8 line explanation here.)
+I built TaskFlow, a task manager for small teams, as a single-page site using plain HTML, CSS and JavaScript with no frameworks. I chose a green and dark-navy palette with the Sora and Inter fonts for a clean, professional look, and used CSS variables so colors, spacing and dark mode stay consistent. Instead of a stock image, the hero has a working Kanban board where visitors can drag tasks between columns and add their own, which shows the product idea straight away. The layout uses CSS Grid and media queries to move from four columns on desktop to one on mobile, with a hamburger menu. The demo form and sign-up popup validate each field and show clear error and success messages. One challenge was making drag and drop work on phones, where it is unreliable, so I added a tap-the-arrow button to each card. Another was keeping dark mode readable, which I solved by replacing hard-coded colors with theme variables.
